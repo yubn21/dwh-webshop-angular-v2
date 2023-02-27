@@ -15,6 +15,7 @@ body {
 .container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 router-outlet + * {
@@ -86,7 +87,7 @@ button {
   border-radius: 2px;
   font-size: 14px;
   cursor: pointer;
-  background-color: #8db641;
+  background-color: #8d5eb9;
   color: white;
   border: none;
 }
@@ -154,7 +155,7 @@ app-bottom-bar {
   background-color: #8d5eb9;
   padding: 16px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
