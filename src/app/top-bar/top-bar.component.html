@@ -1,13 +1,31 @@
-<a [routerLink]="['/']">
-  <div class="button fancy-button">  
-    <i class="material-icons">home</i>
-  </div>
-</a>
+<div class="top-bar-nav">
+  <a [routerLink]="['/']">
+    <div class="button fancy-button">
+      Home <i class="material-icons">home</i>
+    </div>
+  </a>
 
-<a [routerLink]="['/']">
-  <h1> DWH Webshop </h1>
-</a>
+  <a [routerLink]="['/']">
+    <div class="button fancy-button">
+      Todo <i class="material-icons">chat</i>
+    </div>
+  </a>
 
-<a routerLink="/cart" class="button fancy-button">
-  <i class="material-icons">shopping_cart</i>
-</a>
+  <a routerLink="/shipping">
+    <div class="button fancy-button">
+      Shipping <i class="material-icons">local_shipping</i>
+    </div>
+  </a>
+
+  <a routerLink="/contact">
+    <div class="button fancy-button">
+      Contact Us <i class="material-icons">question_answer</i>
+    </div>
+  </a>
+</div>
+
+<div class="">
+  <a routerLink="/cart" class="button fancy-button">
+    <i class="material-icons">shopping_cart</i>
+  </a>
+</div>
