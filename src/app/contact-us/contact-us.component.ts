@@ -18,7 +18,7 @@ export class ContactUsComponent {
   constructor(private formBuilder: FormBuilder) {}
 
   onSubmit(): void {
-    // Process checkout data here
     Swal.fire('Success', 'Your message has been sent', 'success');
+    this.contactForm.reset();
   }
 }
