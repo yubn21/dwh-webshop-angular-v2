@@ -1,0 +1,17 @@
+<h1>Chat with ChatGPT</h1>
+
+<div>
+  <div *ngFor="let item of conversation">
+    <p>{{ item.person }} : {{ item.message }}</p>
+  </div>
+
+  <div>
+    <textarea
+      v-model="latestQuestion"
+      cols="50"
+      rows="5"
+      placeholder="enter your question here..."
+    ></textarea>
+    <button class="button fancy-button" (click)="send()">Send</button>
+  </div>
+</div>
