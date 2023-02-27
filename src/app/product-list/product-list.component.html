@@ -1,0 +1,21 @@
+<h2>Welcome to DWH webshop!</h2>
+
+<h3> 
+  <i class="material-icons">favorite_border</i> 
+  Here are available products
+  <i class="material-icons">favorite_border</i>
+</h3>
+
+<div *ngFor="let product of products">
+  <div class="product-item">
+    <a [title]="product.name + ' details'" 
+       [routerLink]="['/products', product.id]">
+      {{ product.name }}
+
+      <div class="product-image-preview">
+        <img [src]="product.img" alt="image">
+      </div>
+    </a>
+  </div>
+
+</div>
