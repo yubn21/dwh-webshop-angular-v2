@@ -44,13 +44,14 @@
 
   <div>
     <label for="message"> Message </label>
-    <input
+    <textarea
       class="form-control"
       id="message"
-      type="text"
       formControlName="message"
+      cols="50"
+      rows="5"
       required
-    />
+    ></textarea>
   </div>
 
   <button class="button" [disabled]="contactForm.invalid" type="submit">
