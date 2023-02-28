@@ -7,6 +7,7 @@ import { ChatItem } from '../interfaces';
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css'],
 })
+
 export class ChatComponent {
   conversation: ChatItem[] = [];
   latestQuestion: string = '';
@@ -14,7 +15,7 @@ export class ChatComponent {
   constructor() {}
 
   send() {
-    var newChat = { person: 'You', message: this.latestQuestion };
-    this.conversation.push(newChat);
+    var newChatItem = { person: 'You', message: this.latestQuestion };
+    this.conversation.push(newChatItem);
   }
 }
