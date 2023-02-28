@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { CartService } from '../../services/cart.service';
 import { FormBuilder } from '@angular/forms';
 import Swal from 'sweetalert2';
+
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-cart',

@@ -3,6 +3,7 @@ export interface Product {
   name: string;
   price: number;
   description: string;
+  details?: string;
   img: string;
 }
 
@@ -12,6 +13,7 @@ export const products = [
     name: 'Purple Backpack',
     price: 199,
     description: 'A nice, purple backpack with SimCorp Logo',
+    details: "This backpack is perfect for anyone looking for a functional yet fashionable accessory. Its vibrant purple color will make you stand out from the crowd, while its sturdy design ensures that you can take it anywhere.",
     img: 'assets/img/backpack-purple.jpg',
   },
   {
