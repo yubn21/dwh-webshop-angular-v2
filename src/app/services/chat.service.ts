@@ -4,16 +4,18 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
 })
+
 export class ChatService {
-  chatGPTAPI: string = 'https://api.openai.com/v1/completions';
+  api : string = 'https://api.openai.com/v1/completions';
+  key : string = '';
 
   constructor(private http: HttpClient) {}
 
-  sendMessageToChatGPT(message: string) {
+  sendMessageToChatGPT(message: string) {  
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization:
-        'Bearer',
+        `Bearer ${this.key}`,
     });
 
     var body = {
@@ -27,6 +29,6 @@ export class ChatService {
       stop: [' You:', ' AI:'],
     };
 
-    return this.http.post(this.chatGPTAPI, body, { headers });
+    return this.http.post(this.api, body, { headers });
   }
 }

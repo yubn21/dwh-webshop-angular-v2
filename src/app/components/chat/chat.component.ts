@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ChatService } from 'src/app/services/chat.service';
 import { firstValueFrom } from 'rxjs';
+
 import { ChatItem, OpenAIResponseData } from '../../interfaces';
 
 @Component({
@@ -14,7 +15,7 @@ export class ChatComponent {
   isLoading: boolean = false;
 
   prompt: string =
-    'The following is a conversation with an AI of a webshop. The assistant is helpful, creative, clever, and very friendly. The webshop sells umbrella, backpack, mug and bike.';
+    'The following is a conversation with an AI of a webshop. The assistant is creative, clever, and very helpful. The webshop sells umbrella, backpack, mug and bike.';
 
   constructor(private chatService: ChatService) {}
 
