@@ -25,7 +25,6 @@ export class CartComponent {
   ) {}
 
   onSubmit(): void {
-    // Process checkout data here
     this.items = this.cartService.clearCart();
     this.priceInTotal = 0;
     Swal.fire('Success','Your order has been submitted','success'); 

@@ -1,4 +1,4 @@
-<h2>Chat with our AI assistant powered by ChatGPT</h2>
+<h2>Chat with our AI assistant powered by ChatGPT/OpenAI</h2>
 
 <div class="product-image">
   <img src="assets/img/ai.jpg" alt="image" />
@@ -10,12 +10,22 @@
       [(ngModel)]="latestQuestion"
       cols="50"
       rows="5"
-      placeholder="enter your question here..."
+      placeholder="enter your question here.."
     ></textarea>
     <button class="button fancy-button" (click)="send()">Send</button>
   </div>
 
-  <div *ngFor="let item of conversation">
-    <p>{{ item.person }} : {{ item.message }}</p>
+  <div class="chat-container">
+    <div class="button fancy-button" *ngIf="isLoading">
+      AI is thinking ... <i class="material-icons">hourglass_empty</i>
+    </div>
+    <div *ngFor="let item of conversation.slice().reverse()">
+      <div *ngIf="item.person === 'AI'">
+        <p>{{ item.person }} : {{ item.message }}</p>
+      </div>
+      <div *ngIf="item.person !== 'AI'">
+        <p class="color-blue">{{ item.person }} : {{ item.message }}</p>
+      </div>
+    </div>
   </div>
 </div>
