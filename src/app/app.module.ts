@@ -6,15 +6,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { AppComponent } from './app.component';
-import { TopBarComponent } from './top-bar/top-bar.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
-import { ProductDetailsComponent } from './product-details/product-details.component';
-import { CartComponent } from './cart/cart.component';
-import { ShippingComponent } from './shipping/shipping.component';
-import { BottomBarComponent } from './bottom-bar/bottom-bar.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
-import { ChatComponent } from './chat/chat.component';
+import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { CartComponent } from './components/cart/cart.component';
+import { ShippingComponent } from './components/shipping/shipping.component';
+import { BottomBarComponent } from './components/bottom-bar/bottom-bar.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   imports: [
@@ -36,7 +35,6 @@ import { ChatComponent } from './chat/chat.component';
     AppComponent,
     TopBarComponent,
     ProductListComponent,
-    ProductAlertsComponent,
     ProductDetailsComponent,
     CartComponent,
     ShippingComponent,

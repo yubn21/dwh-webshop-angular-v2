@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
 
-import { Product, products } from '../products';
-import { CartService } from '../cart.service';
+import { Product, products } from '../../products';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-details',

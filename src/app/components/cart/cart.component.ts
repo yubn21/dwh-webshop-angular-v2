@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CartService } from '../cart.service';
+import { CartService } from '../../services/cart.service';
 import { FormBuilder } from '@angular/forms';
 import Swal from 'sweetalert2';
 
@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 })
 export class CartComponent {
   items = this.cartService.getItems();
-  priceInTotal = this.items.reduce((sum, product) => sum + product.price, 0);
+  priceInTotal = this.cartService.getPriceInTotal();
 
   checkoutForm = this.formBuilder.group({
     name: '',
@@ -26,6 +26,7 @@ export class CartComponent {
   onSubmit(): void {
     // Process checkout data here
     this.items = this.cartService.clearCart();
+    this.priceInTotal = 0;
     Swal.fire('Success','Your order has been submitted','success'); 
     this.checkoutForm.reset();
   }
