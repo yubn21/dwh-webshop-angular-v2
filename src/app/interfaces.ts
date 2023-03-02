@@ -1,8 +1,6 @@
-import { Time } from '@angular/common';
-
-export interface ChatItem {
-  person: string;
-  message: string;
+export interface Message {
+  role: string;
+  content: string;
 }
 
 export interface OpenAIResponseData {

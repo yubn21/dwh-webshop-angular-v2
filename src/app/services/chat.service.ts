@@ -5,15 +5,16 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root',
 })
 export class ChatService {
-  api: string = 'https://api.openai.com/v1/completions';
-  key: string = '';
+  openaiApiKey: string = '';
 
   constructor(private http: HttpClient) {}
 
-  sendMessageToChatGPT(message: string) {
+  sendMessageToTextCompletionAPI(message: string) {
+    var api: string = 'https://api.openai.com/v1/completions';
+
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${this.key}`,
+      Authorization: `Bearer ${this.openaiApiKey}`,
     });
 
     var body = {
@@ -25,6 +26,6 @@ export class ChatService {
       stop: [' You:', ' AI:'],
     };
 
-    return this.http.post(this.api, body, { headers });
+    return this.http.post(api, body, { headers });
   }
 }

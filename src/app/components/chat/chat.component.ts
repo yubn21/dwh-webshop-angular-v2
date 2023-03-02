@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ChatService } from 'src/app/services/chat.service';
 import { firstValueFrom } from 'rxjs';
 
-import { ChatItem, OpenAIResponseData } from '../../interfaces';
+import { Message, OpenAIResponseData } from '../../interfaces';
 
 @Component({
   selector: 'app-chat',
@@ -10,7 +10,7 @@ import { ChatItem, OpenAIResponseData } from '../../interfaces';
   styleUrls: ['./chat.component.css'],
 })
 export class ChatComponent {
-  conversation: ChatItem[] = [];
+  conversation: Message[] = [];
   latestQuestion: string = '';
   isLoading: boolean = false;
 
@@ -21,27 +21,27 @@ export class ChatComponent {
 
   async send() {
     var newChatItem = {
-      person: 'You',
-      message: this.latestQuestion,
+      role: 'You',
+      content: this.latestQuestion,
     };
 
     this.conversation.push(newChatItem);
     this.prompt = this.prompt.concat(
-      `${newChatItem.person} : ${newChatItem.message} \n AI: `
+      `${newChatItem.role} : ${newChatItem.content} \n AI: `
     );
 
     this.isLoading = true;
     var response = (await firstValueFrom(
-      this.chatService.sendMessageToChatGPT(this.prompt)
+      this.chatService.sendMessageToTextCompletionAPI(this.prompt)
     )) as OpenAIResponseData;
     this.isLoading = false;
 
     var newResponseItem = {
-      person: 'AI',
-      message: response.choices[0].text,
+      role: 'AI',
+      content: response.choices[0].text,
     };
     this.conversation.push(newResponseItem);
-    this.prompt = this.prompt.concat(`${newResponseItem.message} \n`);
+    this.prompt = this.prompt.concat(`${newResponseItem.content} \n`);
 
     this.latestQuestion = '';
   }
